@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   templateUrl: './appointment-list.component.html',
   styleUrl: './appointment-list.component.scss'
 })
+
 export class AppointmentListComponent {
+
+  appointment: string = 'First task'
 
 }
