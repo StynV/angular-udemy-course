@@ -1,3 +1,10 @@
-<p>{{ appointment.id }}</p>
+<!-- <p>{{ appointment.id }}</p>
 <p>{{ appointment.title }}</p>
-<p>{{ appointment.date }}</p>
+<p>{{ appointment.date }}</p> -->
+
+<section>
+    <input [(ngModel)]="newAppointmentTitle" placeholder="Description">
+    <input [(ngModel)]="newAppointmentDate" placeholder="Date">
+
+    <button (click)="addAppointment()" >Add</button>
+</section>

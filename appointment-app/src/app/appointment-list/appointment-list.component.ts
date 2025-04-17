@@ -10,10 +10,13 @@ import { Appointment } from '../models/appointment';
 
 export class AppointmentListComponent {
 
-  appointment: Appointment = {
-    id: 0,
-    title: 'First task',
-    date: new Date()
+  newAppointmentTitle: string = ""
+  newAppointmentDate: Date = new Date()
+  
+  appointments: Appointment[] = []
+
+  addAppointment() {
+    alert(this.newAppointmentTitle + "" + this.newAppointmentDate)
   }
 
 }
