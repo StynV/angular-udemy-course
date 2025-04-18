@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Appointment } from '../models/appointment';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-appointment-list',
@@ -14,9 +15,13 @@ export class AppointmentListComponent implements OnInit {
   
   appointments: Appointment[] = []
  
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
   ngOnInit(): void {
-    const savedAppointments = localStorage.getItem("appointments")
-    this.appointments = savedAppointments ? JSON.parse(savedAppointments) : []
+    if (isPlatformBrowser(this.platformId)) {
+      const savedAppointments = localStorage.getItem("appointments")
+      this.appointments = savedAppointments ? JSON.parse(savedAppointments) : []
+    }
   }
 
   addAppointment() {
