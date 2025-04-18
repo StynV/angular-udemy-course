@@ -30,4 +30,7 @@ export class AppointmentListComponent {
     }
   }
 
+  deleteAppointment(index: number) {
+    this.appointments.splice(index, 1)
+  } 
 }
