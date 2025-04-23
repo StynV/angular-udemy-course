@@ -23,7 +23,7 @@ export class ReservationService {
   }
 
   addReservation(reservation: Reservation): void {
-    reservation.id = new Date().toISOString()
+    reservation.id = Date.now().toString()
     this.reservations.push(reservation)
     localStorage.setItem("reservations", JSON.stringify(this.reservations))
   }
@@ -35,8 +35,8 @@ export class ReservationService {
     localStorage.setItem("reservations", JSON.stringify(this.reservations))
   }
 
-  updateReservation(updatedReservation: Reservation): void {
-    const index = this.reservations.findIndex(reservation => reservation.id === updatedReservation.id)
+  updateReservation(id: string, updatedReservation: Reservation): void {
+    const index = this.reservations.findIndex(reservation => reservation.id === id)
     this.reservations[index] = updatedReservation
     
     localStorage.setItem("reservations", JSON.stringify(this.reservations))
