@@ -15,4 +15,8 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 
 export class ReservationFormComponent {
   reservationForm: FormGroup = new FormGroup({})
+
+  onSubmit() {
+
+  }
 }
